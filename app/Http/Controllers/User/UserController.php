@@ -20,8 +20,8 @@ class UserController extends Controller
         // Menghitung jumlah pengaduan yang ada di table
         $pengaduan = Pengaduan::all()->count();
 
-        // Arahkan ke file user/landing.blade.php
-        return view('user.landing', ['pengaduan' => $pengaduan]);
+        // Arahkan ke file User/landing.blade.php
+        return view('User.landing', ['pengaduan' => $pengaduan]);
     }
 
     public function login(Request $request)
