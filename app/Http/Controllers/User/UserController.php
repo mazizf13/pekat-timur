@@ -133,8 +133,8 @@ class UserController extends Controller
         ]);
 
         // Kirim link verifikasi email
-        // $link = URL::temporarySignedRoute('pekat.verify', now()->addMinutes(30), ['nik' => $data['nik']]);
-        // Mail::to($data['email'])->send(new VerifikasiEmailUntukRegistrasiPengaduanMasyarakat($data['nama'], $link));
+        $link = URL::temporarySignedRoute('pekat.verify', now()->addMinutes(30), ['nik' => $data['nik']]);
+        Mail::to($data['email'])->send(new VerifikasiEmailUntukRegistrasiPengaduanMasyarakat($data['nama'], $link));
 
         // Arahkan ke route pekat.index
         return redirect()->route('pekat.index');
